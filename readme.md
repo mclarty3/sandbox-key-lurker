@@ -1,5 +1,4 @@
 ## Overview
----
 Someone at Facepunch, popular game developers known for Garry's Mod and its upcoming successor, [S&Box](https://sbox.facepunch.com/news), has decided to change how the distribution of developer access tokens is handled. Keys are now released at seemingly random times, and are given to a random selection of how many people are present on the site when they are handed out.
 
 Often, many people are eagerly waiting on the website for comparatively few keys to be given out, to be inevitably disappointed when they don't receive one. On top of this, many members of the S&Box Discord claim to be using bots to increase their chances of getting a key, flaunting how many keys they've gotten to the unfortunate many still waiting.
@@ -7,11 +6,9 @@ Often, many people are eagerly waiting on the website for comparatively few keys
 All of this being said, I made a bot to increase my chances of getting a key. But I promise if I get more than one I'll give out the extras without charging money and without bragging about it. I'll stoop, but not that low.
 
 ## What It Does
----
 Given a list of steam credentials, this script will spawn multiple threads, each running a separate ChromeDriver instance. Each of these instances will log into Steam using the given credentials (no 2FA allowed, sorry!), and wait to join the S&Box Developer Preview queue. For the time being, each bot will just watch the queue forever, waiting until the "Enter" button is enabled, clicking it, then waiting unil the button is enabled again. They're very intelligent bots. I don't actually know what happens when you're granted a key, so I haven't implemented any behaviour for beyond that.
 
 ## Using It
----
 Clone the repository.
 ```bash
 git clone https://github.com/mclarty3/sandbox-key-lurker.git
