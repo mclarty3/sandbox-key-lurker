@@ -67,7 +67,7 @@ def __init_chrome_driver(headless: bool = False) -> webdriver.Chrome:
     """Starts a new Chrome webdriver instance."""
     options = webdriver.ChromeOptions()
     if headless:
-        options.add_argument('headless')                                        # Don't open the webdriver browser
+        options.add_argument('headless')                                    # Don't open the webdriver browser
     options.add_experimental_option('excludeSwitches', ['enable-logging'])  # Prevent terminal logging
     driver = webdriver.Chrome(options=options)
     return driver
@@ -76,7 +76,6 @@ def __init_chrome_driver(headless: bool = False) -> webdriver.Chrome:
 def __init_asset_party(driver: webdriver.Chrome) -> None:
     """Navigates to the Asset Party page and clicks the button to login to Steam."""
     driver.get(asset_party_url)
-    # time.sleep(1) # WebDriverWait seems to trigger unnecessarily, so we wait a bit
 
     WebDriverWait(driver, timeout=5).until(lambda d: 'Log In' in get_element(d, 'sbox_steam_login_button').text)
 
