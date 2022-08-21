@@ -77,9 +77,13 @@ def __init_asset_party(driver: webdriver.Chrome) -> None:
     """Navigates to the Asset Party page and clicks the button to login to Steam."""
     driver.get(asset_party_url)
 
-    WebDriverWait(driver, timeout=5).until(lambda d: 'Log In' in get_element(d, 'sbox_steam_login_button').text)
+    WebDriverWait(driver, timeout=10).until(lambda d: 'Log In' in get_element(d, 'sbox_steam_login_button').text)
 
-    get_element(driver, 'sbox_steam_login_button').click()
+    # Funky work-around that seems to work
+    try:
+        get_element(driver, 'sbox_steam_login_button').click()
+    except Exception:
+        get_element(driver, 'sbox_steam_login_button').click()
 
 
 def __login_to_steam(driver: webdriver.Chrome, user: str, pwd: str) -> None:
